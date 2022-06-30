@@ -3,7 +3,9 @@ import {Lobby} from "./Lobby";
 import {Root} from "./Root";
 import {Base} from "./wizard/Base";
 import {CreateRoomFragment} from "./wizard/CreateRoomFragment";
+import {JoinRoomFragment} from "./wizard/JoinRoomFragment";
 import {MainFragment} from "./wizard/MainFragment";
+
 
 const App = () => {
     const navigate = useNavigate();
@@ -41,8 +43,10 @@ const App = () => {
             showLoginButtonGroup={true} />}
         />
         <Route path="/wizard/join-room" element={<Base
-            mainComponent={() => ""}
-            mainComponentProps={{}}
+            mainComponent={JoinRoomFragment}
+            mainComponentProps={{
+                enterRoomAction: enterRoomAction
+            }}
             showLoginButtonGroup={true} />}
         />
         <Route path="/wizard/sign-in" element={<Base

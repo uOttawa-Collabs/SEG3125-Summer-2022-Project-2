@@ -33,7 +33,9 @@ export const JoinRoomFragment = (props) => {
             <div className={styles["button-group"]}>
                 <Button
                     variant="primary"
-                    onClick={props.enterRoomAction}
+                    onClick={() => {
+                        props.enterRoomAction(code);
+                    }}
                     disabled={buttonDisabled}>
                     Join!
                 </Button>

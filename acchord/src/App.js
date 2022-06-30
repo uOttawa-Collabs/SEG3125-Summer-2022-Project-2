@@ -5,7 +5,8 @@ import {Base} from "./wizard/Base";
 import {CreateRoomFragment} from "./wizard/CreateRoomFragment";
 import {JoinRoomFragment} from "./wizard/JoinRoomFragment";
 import {MainFragment} from "./wizard/MainFragment";
-
+import {SignInFragment} from "./wizard/SignInFragment";
+import {SignUpFragment} from "./wizard/SignUpFragment";
 
 const App = () => {
     const navigate = useNavigate();
@@ -22,8 +23,8 @@ const App = () => {
         navigator.clipboard.writeText(code);
     };
 
-    const enterRoomAction = () => {
-        navigate("/lobby");
+    const enterRoomAction = (code) => {
+        navigate("/lobby", {state: {code: code}});
     };
 
     return (<Routes>
@@ -50,12 +51,12 @@ const App = () => {
             showLoginButtonGroup={true} />}
         />
         <Route path="/wizard/sign-in" element={<Base
-            mainComponent={() => ""}
+            mainComponent={SignInFragment}
             mainComponentProps={{}}
             showLoginButtonGroup={false} />}
         />
         <Route path="/wizard/sign-up" element={<Base
-            mainComponent={() => ""}
+            mainComponent={SignUpFragment}
             mainComponentProps={{}}
             showLoginButtonGroup={false} />}
         />

@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding-bottom: 10px;
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main {
+    height: 100%;
+}
+
+.footer {
+    text-align: center;
+}
+
+.anchor {
+    text-decoration: none;
+}
+
+.github-badge-wrapper {
+    cursor: pointer;
+    width: fit-content;
+    block-size: fit-content;
+}

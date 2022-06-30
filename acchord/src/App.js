@@ -1,10 +1,11 @@
 import {Route, Routes, useNavigate} from "react-router-dom";
+import {Lobby} from "./Lobby";
 import {Root} from "./Root";
-import {MainFragment} from "./wizard/MainFragment";
 import {Base} from "./wizard/Base";
+import {CreateRoomFragment} from "./wizard/CreateRoomFragment";
+import {MainFragment} from "./wizard/MainFragment";
 
 const App = () => {
-    const githubRepoURL = "https://github.com/uOttawa-Collabs/SEG3125-Summer-2022-Project-2";
     const navigate = useNavigate();
 
     const createRoomAction = () => {
@@ -15,12 +16,12 @@ const App = () => {
         navigate("/wizard/join-room");
     };
 
-    const signUpAction = () => {
-        navigate("/wizard/sign-up");
+    const copyCodeAction = (code) => {
+        navigator.clipboard.writeText(code);
     };
 
-    const signInAction = () => {
-        navigate("/wizard/sign-in");
+    const enterRoomAction = () => {
+        navigate("/lobby");
     };
 
     return (<Routes>
@@ -30,48 +31,31 @@ const App = () => {
             mainComponentProps={{
                 createRoomAction: createRoomAction, joinRoomAction: joinRoomAction
             }}
-            showLoginButtonGroup={true}
-            loginButtonGroupProps={{
-                signUpAction: signUpAction, signInAction: signInAction
-            }}
-            githubRepoURL={githubRepoURL} />}
+            showLoginButtonGroup={true} />}
         />
-        <Route exact path="/wizard/create-room" element={<Base
+        <Route path="/wizard/create-room" element={<Base
+            mainComponent={CreateRoomFragment}
+            mainComponentProps={{
+                copyCodeAction: copyCodeAction, enterRoomAction: enterRoomAction
+            }}
+            showLoginButtonGroup={true} />}
+        />
+        <Route path="/wizard/join-room" element={<Base
             mainComponent={() => ""}
             mainComponentProps={{}}
-            showLoginButtonGroup={true}
-            loginButtonGroupProps={{
-                signUpAction: signUpAction, signInAction: signInAction
-            }}
-            githubRepoURL={githubRepoURL} />}
+            showLoginButtonGroup={true} />}
         />
-        <Route exact path="/wizard/join-room" element={<Base
+        <Route path="/wizard/sign-in" element={<Base
             mainComponent={() => ""}
             mainComponentProps={{}}
-            showLoginButtonGroup={true}
-            loginButtonGroupProps={{
-                signUpAction: signUpAction, signInAction: signInAction
-            }}
-            githubRepoURL={githubRepoURL} />}
+            showLoginButtonGroup={false} />}
         />
-        <Route exact path="/wizard/sign-in" element={<Base
+        <Route path="/wizard/sign-up" element={<Base
             mainComponent={() => ""}
             mainComponentProps={{}}
-            showLoginButtonGroup={false}
-            loginButtonGroupProps={{
-                signUpAction: signUpAction, signInAction: signInAction
-            }}
-            githubRepoURL={githubRepoURL} />}
+            showLoginButtonGroup={false} />}
         />
-        <Route exact path="/wizard/sign-up" element={<Base
-            mainComponent={() => ""}
-            mainComponentProps={{}}
-            showLoginButtonGroup={false}
-            loginButtonGroupProps={{
-                signUpAction: signUpAction, signInAction: signInAction
-            }}
-            githubRepoURL={githubRepoURL} />}
-        />
+        <Route path="/lobby" element={<Lobby />} />
     </Routes>);
 };
 

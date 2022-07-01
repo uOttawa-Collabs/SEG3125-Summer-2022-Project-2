@@ -1,5 +1,5 @@
-import {useNavigate} from "react-router-dom";
 import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 export const Root = () => {
     // Jump to the wizard for now...
@@ -7,4 +7,4 @@ export const Root = () => {
     useEffect(() => {
         navigate("/wizard/welcome");
     });
-}
+};

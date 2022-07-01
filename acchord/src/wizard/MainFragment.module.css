@@ -1,34 +1,34 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 120px 0 120px;
-    height: 100%;
+    align-items    : center;
+    display        : flex;
+    flex-direction : column;
+    height         : 100%;
+    padding        : 0 120px 0 120px;
 }
 
 .title {
-    align-self: flex-start;
+    align-self : flex-start;
 }
 
-.title > h1, .title > h5{
-    line-height: 60px;
+.title > h1, .title > h5 {
+    line-height : 60px;
 }
 
 .button-group-wrapper {
-    height: 100%;
+    height : 100%;
 }
 
 .button-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: -15%;
-    width: 300px;
-    height: 100%;
+    display         : flex;
+    flex-direction  : column;
+    height          : 100%;
+    justify-content : center;
+    margin-top      : -15%;
+    width           : 300px;
 }
 
 .button-group > button {
-    padding: 30px 10px 30px 10px;
-    font-size: x-large;
-    margin: 20px 0 20px 0;
+    font-size : x-large;
+    margin    : 20px 0 20px 0;
+    padding   : 30px 10px 30px 10px;
 }

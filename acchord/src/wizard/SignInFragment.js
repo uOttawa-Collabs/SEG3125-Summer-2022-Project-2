@@ -7,7 +7,7 @@ export const SignInFragment = (props) => {
     const navigate = useNavigate();
 
     const returnToHome = () => {
-        alert("This should bring the user to the oAuth page, but since it's a static site, it will return to the homepage directly");
+        alert("This should bring the user to the OAuth page, but since it's a static site, it will return to the homepage directly");
         navigate("/");
     };
 

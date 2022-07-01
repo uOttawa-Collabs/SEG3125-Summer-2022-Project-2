@@ -55,8 +55,20 @@ const App = () => {
             mainComponentProps={{}}
             showLoginButtonGroup={false} />}
         />
+        <Route path="/wizard/sign-in/email" element={<Base
+            mainComponent={() => {
+            }}
+            mainComponentProps={{}}
+            showLoginButtonGroup={false} />}
+        />
         <Route path="/wizard/sign-up" element={<Base
             mainComponent={SignUpFragment}
+            mainComponentProps={{}}
+            showLoginButtonGroup={false} />}
+        />
+        <Route path="/wizard/sign-up/email" element={<Base
+            mainComponent={() => {
+            }}
             mainComponentProps={{}}
             showLoginButtonGroup={false} />}
         />

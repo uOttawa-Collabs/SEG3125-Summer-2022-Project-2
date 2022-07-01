@@ -19,10 +19,6 @@ const App = () => {
         navigate("/wizard/join-room");
     };
 
-    const copyCodeAction = (code) => {
-        navigator.clipboard.writeText(code);
-    };
-
     const enterRoomAction = (code) => {
         navigate("/lobby", {state: {code: code}});
     };
@@ -39,7 +35,7 @@ const App = () => {
         <Route path="/wizard/create-room" element={<Base
             mainComponent={CreateRoomFragment}
             mainComponentProps={{
-                copyCodeAction: copyCodeAction, enterRoomAction: enterRoomAction
+                enterRoomAction: enterRoomAction
             }}
             showLoginButtonGroup={true} />}
         />

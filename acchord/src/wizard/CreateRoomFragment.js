@@ -32,8 +32,11 @@ export const CreateRoomFragment = (props) => {
             <Button
                 variant="outline-primary"
                 onClick={() => {
-                    props.copyCodeAction(code);
-                    alert("Copied to clipboard!");
+                    navigator.clipboard.writeText(code).then(() => {
+                        alert("Copied to clipboard!");
+                    }, () => {
+                        alert("Sorry, your browser seems to be blocking the functionality.\nPlease copy it from the text box above manually.");
+                    });
                 }}>
                 Copy Code
             </Button>

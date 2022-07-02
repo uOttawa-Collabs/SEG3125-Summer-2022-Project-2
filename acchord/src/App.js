@@ -6,7 +6,9 @@ import {CreateRoomFragment} from "./wizard/CreateRoomFragment";
 import {JoinRoomFragment} from "./wizard/JoinRoomFragment";
 import {MainFragment} from "./wizard/MainFragment";
 import {SignInFragment} from "./wizard/SignInFragment";
+import {SignInWithEmailFragment} from "./wizard/SignInWithEmailFragment";
 import {SignUpFragment} from "./wizard/SignUpFragment";
+import {SignUpWithEmailFragment} from "./wizard/SignUpWithEmailFragment";
 
 const App = () => {
     const navigate = useNavigate();
@@ -52,8 +54,7 @@ const App = () => {
             showLoginButtonGroup={false} />}
         />
         <Route path="/wizard/sign-in/email" element={<Base
-            mainComponent={() => {
-            }}
+            mainComponent={SignInWithEmailFragment}
             mainComponentProps={{}}
             showLoginButtonGroup={false} />}
         />
@@ -63,8 +64,7 @@ const App = () => {
             showLoginButtonGroup={false} />}
         />
         <Route path="/wizard/sign-up/email" element={<Base
-            mainComponent={() => {
-            }}
+            mainComponent={SignUpWithEmailFragment}
             mainComponentProps={{}}
             showLoginButtonGroup={false} />}
         />

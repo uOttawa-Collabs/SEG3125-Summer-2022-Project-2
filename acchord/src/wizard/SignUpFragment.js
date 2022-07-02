@@ -3,7 +3,7 @@ import {OAuthChooser} from "./OAuthChooser";
 import {OAuthOptionList} from "./OAuthOptionList";
 import styles from "./SignUpFragment.module.css";
 
-export const SignUpFragment = (props) => {
+export const SignUpFragment = () => {
     const navigate = useNavigate();
 
     const returnToHome = () => {

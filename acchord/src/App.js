@@ -1,5 +1,5 @@
 import {Route, Routes, useNavigate} from "react-router-dom";
-import {Lobby} from "./Lobby";
+import {Lobby} from "./main/Lobby";
 import {Root} from "./Root";
 import {Base} from "./wizard/Base";
 import {CreateRoomFragment} from "./wizard/CreateRoomFragment";

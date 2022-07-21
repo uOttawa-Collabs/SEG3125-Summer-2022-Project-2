@@ -1,0 +1,15 @@
+.container {
+    background-color : var(--bs-primary);
+    display          : flex;
+    flex-direction   : column;
+    height           : 65px;
+    justify-content  : flex-end;
+    width            : 100vw;
+}
+
+.horizontal {
+    display         : flex;
+    flex-direction  : row;
+    height          : 60px;
+    justify-content : space-between;
+}

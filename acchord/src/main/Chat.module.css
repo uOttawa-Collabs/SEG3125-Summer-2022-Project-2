@@ -1,0 +1,22 @@
+.container {
+    display         : flex !important;
+    flex-direction  : column;
+    justify-content : space-between;
+    width           : 100%;
+}
+
+.top-bar .messages {
+    align-items    : center;
+    display        : flex;
+    flex-direction : row;
+}
+
+.messages {
+    margin : 10px;
+}
+
+.list-icons {
+    height       : 30px;
+    margin-right : 10px;
+    width        : 30px;
+}

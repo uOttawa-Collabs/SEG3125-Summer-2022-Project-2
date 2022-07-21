@@ -1,0 +1,26 @@
+.container {
+    display         : flex !important;
+    flex-direction  : row;
+    justify-content : space-between;
+    width           : 100%;
+}
+
+.left .right {
+    align-items    : center;
+    display        : flex;
+    flex-direction : row;
+}
+
+.left {
+    justify-content : flex-start;
+}
+
+.right {
+    justify-content : flex-end;
+}
+
+.list-icons {
+    height       : 30px;
+    margin-right : 10px;
+    width        : 30px;
+}

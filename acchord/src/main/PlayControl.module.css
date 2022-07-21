@@ -1,0 +1,21 @@
+.container {
+    height : 100%;
+    width  : 0;
+}
+
+.control-button-group {
+    height       : 60px;
+    left         : 0;
+    margin-left  : auto;
+    margin-right : auto;
+    position     : absolute !important;
+    right        : 0;
+    width        : 250px;
+    z-index      : 0;
+}
+
+.control-button-icon {
+    color  : white;
+    height : 100%;
+    width  : 50px;
+}

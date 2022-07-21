@@ -1,0 +1,35 @@
+.container {
+    display         : flex;
+    flex-direction  : column;
+    height          : 100vh;
+    justify-content : space-between;
+}
+
+.main {
+    display        : flex;
+    flex-direction : row;
+    height         : 85%;
+}
+
+.main-left, .main-right {
+    display : flex;
+    height  : 100%;
+}
+
+.main-left {
+    flex-direction  : column;
+    justify-content : space-between;
+    width           : 500px;
+}
+
+.main-right {
+    flex-grow : 1;
+}
+
+.main-left-top {
+    height : 40%;
+}
+
+.main-left-bottom {
+    height : 60%;
+}

@@ -1,0 +1,20 @@
+{
+    "Base": {
+        "languageChooseTitle": "选择一种语言",
+        "buttonSignUp": "注册",
+        "buttonSignIn": "登录"
+    },
+    "MainFragment": {
+        "title": "随时随地享受音乐",
+        "buttonCreateRoom": "创建房间",
+        "buttonJoinRoom": "加入房间"
+    },
+    "CreateRoomFragment": {
+        "title": "分享房间号码给朋友！",
+        "buttonCopyCode": "复制号码",
+        "buttonGoToRoom": "进入房间",
+        "alertCopiedToClipboardSuccess": "已复制！",
+        "alertCopiedToClipboardFailed": "抱歉，你的浏览器似乎不支持此功能，劳烦手动复制。",
+        "tip": "别担心，房间内会继续显示此号码 ;）"
+    }
+}

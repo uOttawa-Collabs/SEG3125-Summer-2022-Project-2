@@ -1,0 +1,20 @@
+{
+    "Base": {
+        "languageChooseTitle": "Choose a language",
+        "buttonSignUp": "Sign Up",
+        "buttonSignIn": "Sign In"
+    },
+    "MainFragment": {
+        "title": "Enjoy the music, with anyone, from anywhere, at anytime",
+        "buttonCreateRoom": "Create a Room",
+        "buttonJoinRoom": "Join in a Room"
+    },
+    "CreateRoomFragment": {
+        "title": "Share the code to your friend!",
+        "buttonCopyCode": "Copy Code",
+        "buttonGoToRoom": "Head to the Room",
+        "alertCopiedToClipboardSuccess": "Copied to clipboard!",
+        "alertCopiedToClipboardFailed": "Sorry, your browser seems to be blocking the functionality.\nPlease copy it from the text box above manually.",
+        "tip": "Don't worry, the code is still available for the room at any time :)"
+    }
+}

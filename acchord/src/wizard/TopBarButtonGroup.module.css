@@ -9,3 +9,8 @@
 .button {
     margin : 0 20px 0 20px;
 }
+
+.language-icon {
+    height : 25px;
+    width  : 25px;
+}

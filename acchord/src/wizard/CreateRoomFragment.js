@@ -1,9 +1,12 @@
 import {useEffect, useState} from "react";
 import {Form, OverlayTrigger, Tooltip} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import {useTranslation} from "react-i18next";
 import styles from "./CreateRoomFragment.module.css";
 
 export const CreateRoomFragment = (props) => {
+    const {t, i18n} = useTranslation();
+
     const [code, setCode] = useState("000000");
     useEffect(() => {
         setCode(addLeadingZeros(randomBetween(1, 999999), 6));
@@ -22,7 +25,7 @@ export const CreateRoomFragment = (props) => {
     };
 
     return (<div className={styles["container"]}>
-        <h1>Share the code to your friend!</h1>
+        <h1>{t("CreateRoomFragment.title")}</h1>
         <div className={styles["code-box"]}>
             <Form.Control className={styles["code-box-input"]} type="text" readOnly placeholder="000000"
                           value={code}>
@@ -33,21 +36,21 @@ export const CreateRoomFragment = (props) => {
                 variant="outline-primary"
                 onClick={() => {
                     navigator.clipboard.writeText(code).then(() => {
-                        alert("Copied to clipboard!");
+                        alert(t("CreateRoomFragment.alertCopiedToClipboardSuccess"));
                     }, () => {
-                        alert("Sorry, your browser seems to be blocking the functionality.\nPlease copy it from the text box above manually.");
+                        alert(t("CreateRoomFragment.alertCopiedToClipboardFailed"));
                     });
                 }}>
-                Copy Code
+                {t("CreateRoomFragment.buttonCopyCode")}
             </Button>
             <OverlayTrigger
                 overlay={(props) => (<Tooltip id="button-tooltip" {...props}>
-                    <span>Don't worry, the code is still available for the room at any time :)</span>
+                    <span>{t("CreateRoomFragment.tip")}</span>
                 </Tooltip>)}
                 placement="auto">
                 <Button variant="primary" onClick={() => {
                     props.enterRoomAction(code);
-                }}>Head to the Room</Button>
+                }}>{t("CreateRoomFragment.buttonGoToRoom")}</Button>
             </OverlayTrigger>
         </div>
     </div>);

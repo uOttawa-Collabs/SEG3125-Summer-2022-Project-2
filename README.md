@@ -33,7 +33,7 @@ room and invite anybody to join in and listen to the playlist together at the sa
 
 ## Original Mockups
 
-* See Brightspace submission `Project 2.pdf`.
+* See Brightspace submission `Project 2.pdf`, or `Mockup.pdf` in this repo.
 * Personas
     * Josh Nelson
         * 18-year-old high-school student

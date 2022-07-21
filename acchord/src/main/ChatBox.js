@@ -4,7 +4,14 @@ import {Chat} from "./Chat";
 import styles from "./ChatBox.module.css";
 
 export const ChatBox = () => {
+    const sendMessageAction = () => {
+        if (message !== "") {
+            setList(list => [...list, <Chat key={list.length} name="Me" message={message} />]);
+        }
+    };
+
     const [list, setList] = useState();
+    const [message, setMessage] = useState();
 
     useEffect(() => {
         fetch("/data/room-chats.json")
@@ -32,10 +39,12 @@ export const ChatBox = () => {
             <div className={styles["input-bar"]}>
                 <InputGroup>
                     <Form.Control
+                        value={message}
+                        onChange={e => setMessage(e.target.value)}
                         placeholder="Send a message..."
                         aria-label="Send a message"
                     />
-                    <Button variant="primary">
+                    <Button variant="primary" onClick={sendMessageAction}>
                         Send
                     </Button>
                 </InputGroup>

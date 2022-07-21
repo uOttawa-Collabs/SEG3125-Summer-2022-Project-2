@@ -1,3 +1,55 @@
 .container {
+    align-items      : center;
+    backdrop-filter  : blur(10px);
+    background-color : rgba(200, 200, 200, 0.3);
+    bottom           : 60px;
+    display          : flex;
+    flex-direction   : column;
+    left             : -400px;
+    padding          : 30px;
+    position         : absolute;
+    top              : 74px;
+    width            : 400px;
+}
 
+.items {
+    background-color : rgba(255, 255, 255, 0.7) !important;
+    border           : gray 1px solid !important;
+    height           : 50px;
+    width            : 100%;
+}
+
+.text {
+    color     : black;
+    font-size : 1.25rem;
+}
+
+.slide-in {
+    animation-duration  : 0.5s;
+    animation-fill-mode : forwards;
+    animation-name      : slide-in;
+}
+
+.slide-out {
+    animation-duration  : 0.5s;
+    animation-fill-mode : forwards;
+    animation-name      : slide-out;
+}
+
+@keyframes slide-in {
+    from {
+        left : -400px;
+    }
+    to {
+        left : 0;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left : 0;
+    }
+    to {
+        left : -400px;
+    }
 }

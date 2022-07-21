@@ -2,14 +2,21 @@ import Hamburger from "hamburger-react";
 import {Button, Navbar as ReactNavbar, NavbarBrand} from "react-bootstrap";
 import {FaUserCircle} from "react-icons/fa";
 import {IoMdExit} from "react-icons/io";
+import {useNavigate} from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 export const Navbar = (props) => {
+    const navigate = useNavigate();
+
+    const leaveRoomAction = () => {
+        navigate("/");
+    };
+
     return (
         <ReactNavbar className={styles["nav"]} as="nav" bg="primary" variant="dark">
             <div className={styles["justify-left"]}>
                 <div className={styles["hamburger"]}>
-                    <Hamburger color="white" />
+                    <Hamburger color="white" toggled={props.drawerOpen} toggle={props.setDrawerOpen} />
                 </div>
                 <NavbarBrand className={styles["brand"]}>
                     Accord
@@ -19,7 +26,7 @@ export const Navbar = (props) => {
                 </div>
             </div>
             <div className={styles["justify-right"]}>
-                <Button className={styles["leave-room-button"]}>
+                <Button className={styles["leave-room-button"]} onClick={leaveRoomAction}>
                     <IoMdExit className={styles["leave-room-icon"]} />
                     <span>Leave Room</span>
                 </Button>

@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useTranslation} from "react-i18next";
 import {useLocation} from "react-router-dom";
 import {BottomBar} from "./BottomBar";
 import {ChatBox} from "./ChatBox";
@@ -11,11 +12,13 @@ import {PlayList} from "./PlayList";
 export const Lobby = (props) => {
     const {state} = useLocation();
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [t, i18n] = useTranslation();
 
     try {
         return (
             <div className={styles["container"]}>
-                <Navbar location={"Lobby (" + state.code + ")"} drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
+                <Navbar location={`${t("Lobby.textLobby")} (` + state.code + ")"} drawerOpen={drawerOpen}
+                        setDrawerOpen={setDrawerOpen} />
                 <div className={styles["main"]}>
                     <div className={styles["main-left"]}>
                         <div className={styles["main-left-top"]}>
@@ -33,7 +36,7 @@ export const Lobby = (props) => {
 
                 <Drawer open={drawerOpen} items={[
                     {
-                        text: "Playlist History"
+                        text: t("Lobby.textDrawerPlaylistHistory")
                     }
                 ]} />
             </div>

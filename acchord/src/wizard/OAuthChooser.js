@@ -1,11 +1,14 @@
 import {Card, Image} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
 import styles from "./OAuthChooser.module.css";
 
 export const OAuthChooser = (props) => {
+    const {t, i18n} = useTranslation();
+
     return (<div className={styles["container"]}>
         <Card bg="light" border="lightgray">
             <Card.Header as="h5">
-                Please choose an option to continue:
+                {t("OAuthChooser.title")}
             </Card.Header>
             <Card.Body className={styles["card-body"]}>
                 {props.oAuthOptionList.map((element) => (
@@ -17,7 +20,7 @@ export const OAuthChooser = (props) => {
                         </div>
                         <div className={styles["card-item-text-wrapper"]}
                              style={{backgroundColor: element.backgroundColor, color: element.textColor}}>
-                            <span>{props.textPrefix + element.text}</span>
+                            <span>{props.textTemplate(element.text)}</span>
                         </div>
                     </div>))}
             </Card.Body>

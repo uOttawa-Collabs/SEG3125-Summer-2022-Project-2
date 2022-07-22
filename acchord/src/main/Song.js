@@ -1,10 +1,13 @@
 import {ButtonGroup, ListGroupItem} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import {useTranslation} from "react-i18next";
 import {BsMusicNoteList} from "react-icons/bs";
 import {FaArrowDown, FaArrowUp, FaTrash, FaUserCircle} from "react-icons/fa";
 import styles from "./Song.module.css";
 
 export const Song = (props) => {
+    const [t, i18n] = useTranslation();
+
     return (
         <ListGroupItem className={styles["container"]}>
             <div className={styles["left"]}>
@@ -22,21 +25,21 @@ export const Song = (props) => {
                         <ButtonGroup>
                             <Button variant="danger">
                                 <FaTrash className={styles["control-bar-button-icons"]} />
-                                <span>Remove</span>
+                                <span>{t("Song.buttonRemove")}</span>
                             </Button>
                             <Button variant="primary">
                                 <FaArrowUp className={styles["control-bar-button-icons"]} />
-                                <span>Adjust Up</span>
+                                <span>{t("Song.buttonAdjustUp")}</span>
                             </Button>
                             <Button variant="primary">
                                 <FaArrowDown className={styles["control-bar-button-icons"]} />
-                                <span>Adjust Down</span>
+                                <span>{t("Song.buttonAdjustDown")}</span>
                             </Button>
                         </ButtonGroup> :
-                        <span className={styles["text"]}>Playing Now</span>}
+                        <span className={styles["text"]}>{t("Song.textPlayingNow")}</span>}
                 </div>
                 <div className={styles["source"]}>
-                    <span className={styles["text"]}>From</span>
+                    <span className={styles["text"]}>{t("Song.textFrom")}</span>
                     <FaUserCircle className={styles["list-icons"]} />
                 </div>
             </div>

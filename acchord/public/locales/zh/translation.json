@@ -16,5 +16,52 @@
         "alertCopiedToClipboardSuccess": "已复制！",
         "alertCopiedToClipboardFailed": "抱歉，你的浏览器似乎不支持此功能，劳烦手动复制。",
         "tip": "别担心，房间内会继续显示此号码 ;）"
+    },
+    "JoinRoomFragment": {
+        "title": "请输入房间号码",
+        "buttonJoin": "加入!"
+    },
+    "SignUpFragment": {
+        "templateTextSignUpWith": "使用 %s 登录"
+    },
+    "SignInFragment": {
+        "templateTextSignUpWith": "使用 %s 登录"
+    },
+    "OAuthChooser": {
+        "title": "请选择一种方式以继续"
+    },
+    "Lobby": {
+        "textLobby": "大厅",
+        "textDrawerPlaylistHistory": "播放列表历史"
+    },
+    "Navbar": {
+        "buttonLeaveRoom": "离开房间"
+    },
+    "MemberList": {
+        "textNowInRoom": "在线列表",
+        "textOwner": "房主",
+        "textModerator": "管理员",
+        "textMember": "成员"
+    },
+    "ChatBox": {
+        "textChats": "聊天室",
+        "textSendAMessage": "编写消息……",
+        "buttonSend": "发送"
+    },
+    "PlayList": {
+        "textRoomPlayList": "房间播放列表",
+        "templateTextSongCount": "%n 首",
+        "textFilter": "筛选",
+        "textFilterPlaceholder": "歌曲名/歌手名"
+    },
+    "Song": {
+        "buttonRemove": "移除",
+        "buttonAdjustUp": "移至上方",
+        "buttonAdjustDown": "移至下方",
+        "textPlayingNow": "正在播放",
+        "textFrom": "来自"
+    },
+    "Notification": {
+        "textNotification": "通知"
     }
 }

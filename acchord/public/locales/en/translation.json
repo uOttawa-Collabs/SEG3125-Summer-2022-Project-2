@@ -16,5 +16,52 @@
         "alertCopiedToClipboardSuccess": "Copied to clipboard!",
         "alertCopiedToClipboardFailed": "Sorry, your browser seems to be blocking the functionality.\nPlease copy it from the text box above manually.",
         "tip": "Don't worry, the code is still available for the room at any time :)"
+    },
+    "JoinRoomFragment": {
+        "title": "Please enter the secret code",
+        "buttonJoin": "Join!"
+    },
+    "SignUpFragment": {
+        "templateTextSignUpWith": "Sign up with %s"
+    },
+    "SignInFragment": {
+        "templateTextSignUpWith": "Sign in with %s"
+    },
+    "OAuthChooser": {
+        "title": "Please choose an option to continue"
+    },
+    "Lobby": {
+        "textLobby": "Lobby",
+        "textDrawerPlaylistHistory": "Playlist History"
+    },
+    "Navbar": {
+        "buttonLeaveRoom": "Leave Room"
+    },
+    "MemberList": {
+        "textNowInRoom": "Now in Room",
+        "textOwner": "Owner",
+        "textModerator": "Moderator",
+        "textMember": "Member"
+    },
+    "ChatBox": {
+        "textChats": "Chats",
+        "textSendAMessage": "Send a message",
+        "buttonSend": "Send"
+    },
+    "PlayList": {
+        "textRoomPlayList": "Room Playlist",
+        "templateTextSongCount": "%n Songs",
+        "textFilter": "Filter",
+        "textFilterPlaceholder": "Song name/Artist name"
+    },
+    "Song": {
+        "buttonRemove": "Remove",
+        "buttonAdjustUp": "Adjust Up",
+        "buttonAdjustDown": "Adjust Down",
+        "textPlayingNow": "Playing Now",
+        "textFrom": "From"
+    },
+    "Notification": {
+        "textNotification": "Notification"
     }
 }

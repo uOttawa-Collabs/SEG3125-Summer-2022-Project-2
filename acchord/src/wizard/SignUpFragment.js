@@ -1,9 +1,11 @@
+import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
 import {OAuthChooser} from "./OAuthChooser";
 import {OAuthOptionList} from "./OAuthOptionList";
 import styles from "./SignUpFragment.module.css";
 
 export const SignUpFragment = () => {
+    const {t, i18n} = useTranslation();
     const navigate = useNavigate();
 
     const returnToHome = () => {
@@ -23,7 +25,8 @@ export const SignUpFragment = () => {
 
     return (
         <div className={styles["container"]}>
-            <OAuthChooser oAuthOptionList={OAuthOptionList} oAuthHandlerMap={handlerMap} textPrefix="Sign up with " />
+            <OAuthChooser oAuthOptionList={OAuthOptionList} oAuthHandlerMap={handlerMap}
+                          textTemplate={(text) => t("SignUpFragment.templateTextSignUpWith").replace("%s", text)} />
         </div>
     );
 };

@@ -1,9 +1,11 @@
 import {useEffect, useState} from "react";
 import {Button, Card, Form, InputGroup, ListGroup} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
 import {Chat} from "./Chat";
 import styles from "./ChatBox.module.css";
 
 export const ChatBox = () => {
+    const [t, i18n] = useTranslation();
     const sendMessageAction = () => {
         if (message !== "") {
             setList(list => [...list, <Chat key={list.length} name="Me" message={message} />]);
@@ -29,7 +31,7 @@ export const ChatBox = () => {
     return (
         <div className={styles["container"]}>
             <div className={styles["top-bar"]}>
-                <span>Chats</span>
+                <span>{t("ChatBox.textChats")}</span>
             </div>
             <Card className={styles["list"]}>
                 <ListGroup variant="flush">
@@ -41,11 +43,11 @@ export const ChatBox = () => {
                     <Form.Control
                         value={message}
                         onChange={e => setMessage(e.target.value)}
-                        placeholder="Send a message..."
+                        placeholder={t("ChatBox.textSendAMessage")}
                         aria-label="Send a message"
                     />
                     <Button variant="primary" onClick={sendMessageAction}>
-                        Send
+                        {t("ChatBox.buttonSend")}
                     </Button>
                 </InputGroup>
             </div>

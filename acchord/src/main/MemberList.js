@@ -1,10 +1,12 @@
 import {useEffect, useState} from "react";
 import {Card, ListGroup} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
 import styles from "./MemberList.module.css";
 import {MemberListItem} from "./MemberListItem";
 
 export const MemberList = () => {
     const [list, setList] = useState();
+    const [t, i18n] = useTranslation();
 
     useEffect(() => {
         fetch("/data/room-users.json")
@@ -12,8 +14,12 @@ export const MemberList = () => {
             .then(data => {
                 let items = [];
                 for (let i in data) {
-                    items.push(((name, group) =>
-                        <MemberListItem key={i} name={name} group={group} />)(data[i].name, data[i].group));
+                    items.push(
+                        ((name, group) =>
+                            <MemberListItem
+                                key={i} name={name}
+                                group={group} />)
+                        (data[i].name, t("MemberList.text" + data[i].group[0].toUpperCase() + data[i].group.substring(1))));
                 }
                 setList(items);
             });
@@ -22,7 +28,7 @@ export const MemberList = () => {
     return (
         <div className={styles["container"]}>
             <div className={styles["top-bar"]}>
-                <span>Now in Room</span>
+                <span>{t("MemberList.textNowInRoom")}</span>
             </div>
             <Card className={styles["list"]}>
                 <ListGroup variant="flush">

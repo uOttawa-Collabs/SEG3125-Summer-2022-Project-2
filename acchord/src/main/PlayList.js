@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {Card, Form, InputGroup} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import {useTranslation} from "react-i18next";
 import {AiOutlinePlusCircle} from "react-icons/ai";
 import styles from "./PlayList.module.css";
 import {Song} from "./Song";
@@ -10,6 +11,7 @@ export const PlayList = () => {
     const [filteredList, setFilteredList] = useState();
     const [listLength, setListLength] = useState();
     const [filter, setFilter] = useState("");
+    const [t, i18n] = useTranslation();
 
     useEffect(() => {
         fetch("/data/room-playlist.json")
@@ -41,19 +43,19 @@ export const PlayList = () => {
     return (<div className={styles["container"]}>
         <div className={styles["top-bar"]}>
             <div className={styles["left"]}>
-                <span>Room Playlist</span>
+                <span>{t("PlayList.textRoomPlayList")}</span>
                 &nbsp;
-                <span>({listLength} Songs)</span>
+                <span>({t("PlayList.templateTextSongCount").replace("%n", listLength)})</span>
                 <Button variant="primary" className={styles["button-add"]}>
                     <AiOutlinePlusCircle className={styles["button-add-icon"]} />
                 </Button>
             </div>
             <div className={styles["right"]}>
                 <InputGroup className={styles["search-bar"]}>
-                    <InputGroup.Text>Filter</InputGroup.Text>
+                    <InputGroup.Text>{t("PlayList.textFilter")}</InputGroup.Text>
                     <Form.Control value={filter} onChange={e => {
                         setFilter(e.target.value.toLowerCase());
-                    }} placeholder="Song name/Artist name" aria-label="Song filter" />
+                    }} placeholder={t("PlayList.textFilterPlaceholder")} aria-label="Song filter" />
                 </InputGroup>
             </div>
         </div>

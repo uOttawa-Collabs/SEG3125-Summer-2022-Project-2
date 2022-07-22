@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {Button, Form} from "react-bootstrap";
+import {useTranslation} from "react-i18next";
 import styles from "./JoinRoomFragment.module.css";
 
 const isNumeric = (n) => {
@@ -7,6 +8,7 @@ const isNumeric = (n) => {
 };
 
 export const JoinRoomFragment = (props) => {
+    const {t, i18n} = useTranslation();
     const [code, setCode] = useState("");
     const [buttonDisabled, setButtonDisabled] = useState(true);
 
@@ -24,7 +26,7 @@ export const JoinRoomFragment = (props) => {
 
     return (
         <div className={styles["container"]}>
-            <h1>Please enter the secret code</h1>
+            <h1>{t("JoinRoomFragment.title")}</h1>
             <div className={styles["code-box"]}>
                 <Form.Control className={styles["code-box-input"]} type="text" placeholder="000000"
                               value={code} onChange={codeBoxHandler}>
@@ -37,7 +39,7 @@ export const JoinRoomFragment = (props) => {
                         props.enterRoomAction(code);
                     }}
                     disabled={buttonDisabled}>
-                    Join!
+                    {t("JoinRoomFragment.buttonJoin")}
                 </Button>
             </div>
         </div>

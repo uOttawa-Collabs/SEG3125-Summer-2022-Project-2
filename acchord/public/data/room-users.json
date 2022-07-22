@@ -1,26 +1,26 @@
 [
     {
         "name": "John Doe",
-        "group": "Owner"
+        "group": "owner"
     },
     {
         "name": "Jane Doe",
-        "group": "Moderator"
+        "group": "moderator"
     },
     {
         "name": "Joe Blow",
-        "group": "Member"
+        "group": "member"
     },
     {
         "name": "Test1",
-        "group": "Member"
+        "group": "member"
     },
     {
         "name": "Test2",
-        "group": "Member"
+        "group": "member"
     },
     {
         "name": "Test3",
-        "group": "Member"
+        "group": "member"
     }
 ]
